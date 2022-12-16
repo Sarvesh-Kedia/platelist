@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smash Or Pass</title>
+    <title>Platelist</title>
 </head>
 <body>
     <div class="container">
         <div class="parent" style="flex-direction: column;">
-            <h1>Platelist</h1>
+            <h1>{{name}}</h1>
             <br>
 
         </div>
         <div class="parent">
-            <div *ngFor="let category of categories">
-                <div class="card shadow">
-
-                <h5 class="card-title" routerLink="/categories/{{category.id}}">{{category.name}}</h5>
-                </div>
+            <form [formGroup]="newItemForm" (ngSubmit)="onSubmit()">
+                <input id="item" type="text" formControlName="item">                           
+            </form>
+        </div>
+        <div class="parent">
+            <div class="card shadow" *ngFor="let item of itemList">
+                <h5 class="card-title"><a class="special-links" href="https://www.swiggy.com/search?query={{item}}">{{item}}</a></h5>
+                
             </div>
         </div>
 

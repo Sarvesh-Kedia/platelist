@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 
@@ -28,10 +29,16 @@ export class CategoriesComponent {
     {
         "id": "45",
         "name": "Stress Eating",
-        "items": ["fries", "cheese balls"]
+        "items": ["fries", "cheese+balls"]
     }
 
   ]
+
+  constructor(private route: ActivatedRoute) {
+
+  }
+
+
 
   
   
